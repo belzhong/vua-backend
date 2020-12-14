@@ -1,6 +1,6 @@
 import { 
   vuaSinglyLinkedListNode,
-} from '../visualuralgo/src/data_structures/singly_linked_list.js';
+} from '../../visualuralgo/src/data_structures/singly_linked_list.js';
 
 export function fromArrayToLinkedList(arr) {
   const head = {next: null};
