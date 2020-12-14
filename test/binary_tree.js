@@ -1,5 +1,6 @@
-const data = new getRandomIntegerArray(getRandomInteger(200, 300));
+const data = new getRandomIntegerArray(getRandomInteger(20, 30));
 const head = new vuaBinaryTreeHead();
+const vector = new vuaVector();
 
 function constructTree(head, data) {
   head.next = new vuaBinaryTreeNode(getRandomInteger(5, 20));
@@ -22,28 +23,9 @@ function constructTree(head, data) {
   }
 }
 
-function printMAryTree(head) {
-  let cur = head.next !== null ? [head.next] : []; 
-  let next = [];
-  while (cur.length !== 0) {
-    const values = [];
-    for (const node of cur) {
-      values.push(node.value);
-      if (node.left !== null) {
-        next.push(node.left);
-      }
-      if (node.right !== null) {
-        next.push(node.right);
-      }
-    }
-    cur = next;
-    next = [];
-  }
-}
-
 function preorder(root) {
   if (root !== null) {
-    root.value;
+    vector.push(root.value);
     preorder(root.left);
     preorder(root.right);
   }
