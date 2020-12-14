@@ -30,7 +30,7 @@ import {
 // } from '../visualuralgo/src/data_structures/snapshot/snapshot.js';
 import { getRandomIntegerArray, getRandomInteger } from '../visualuralgo/src/data_structures/test/random.js';
 
-import { fromArrayToLinkedList } from './utils';
+import { fromArrayToLinkedList } from './utils/index.js';
 
 const {NodeVM} = pkg;
 
