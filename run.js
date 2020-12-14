@@ -30,11 +30,14 @@ import {
 // } from '../visualuralgo/src/data_structures/snapshot/snapshot.js';
 import { getRandomIntegerArray, getRandomInteger } from '../visualuralgo/src/data_structures/test/random.js';
 
+import { fromArrayToLinkedList } from './utils';
+
 const {NodeVM} = pkg;
 
 function run(code) {
   const vm = new NodeVM({
     sandbox: {
+      fromArrayToLinkedList,
       vuaSinglyLinkedListNode,
       vuaSinglyLinkedListHead,
       vuaMAryTreeNode,
