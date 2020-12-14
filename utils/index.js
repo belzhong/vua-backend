@@ -1,6 +1,9 @@
 import { 
   vuaSinglyLinkedListNode,
 } from '../../visualuralgo/src/data_structures/singly_linked_list.js';
+import { 
+  vuaBinaryTreeNode
+} from '../../visualuralgo/src/data_structures/binary_tree.js';
 
 export function fromArrayToLinkedList(arr) {
   const head = {next: null};
@@ -9,4 +12,27 @@ export function fromArrayToLinkedList(arr) {
     head.next = node;
   }
   return head.next;
+}
+
+export function fromArrayToBinaryTree(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+
+  const root = new vuaBinaryTreeNode(arr[0]);
+  const queue = [root];
+
+  for (let i = 1; i < arr.length; i += 2) {
+    const node = queue.shift();
+    if (arr[i] !== null) {
+      node.left = new vuaBinaryTreeNode(arr[i]);
+      queue.push(node.left);
+    }
+    if (i + 1 < arr.length && arr[i + 1] !== null) {
+      node.right = new vuaBinaryTreeNode(arr[i + 1]);
+      queue.push(node.right);
+    }
+  }
+
+  return root;
 }
