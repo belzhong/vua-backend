@@ -40,6 +40,7 @@ const {NodeVM} = pkg;
 
 function run(code) {
   const vm = new NodeVM({
+    timeout: 3000,
     sandbox: {
       fromArrayToMAryTree,
       fromArrayToBinaryTree,
