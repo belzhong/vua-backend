@@ -4,7 +4,7 @@ import cors from 'cors';
 import multer from 'multer';
 import { snapshots } from '../visualuralgo/src/data_structures/snapshot/snapshot.js';
 import { tracers } from '../visualuralgo/src/data_structures/tracer/tracer.js';
-import http from 'http';
+import http2 from 'http2';
 
 const app = express();
 const port = 3001;
@@ -23,4 +23,4 @@ app.post('/vm', upload.single('code.js'), (req, res) => {
 
 app.listen(port);
 
-http.createServer(app).listen(80);
+http2.createServer(app).listen(80);
